@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Izza Nail Studio — Landing Page
 
-## Getting Started
+A single-page marketing site built with Next.js 15 (App Router), TypeScript, and Tailwind CSS 4.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> Note: `next/font/google` downloads Caveat and Poppins from Google Fonts at build time, so an internet
+> connection is required for `npm run dev` / `npm run build` to succeed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+app/
+  layout.tsx            Root layout, loads Caveat (script) + Poppins (sans) fonts
+  globals.css           Tailwind 4 `@theme` tokens for brand colors, fonts, arch-mask utility
+  page.tsx              Assembles all sections
+  components/
+    Logo.tsx             Script "izza" wordmark + "NAIL STUDIO" caps
+    PillButton.tsx        Reusable rounded sage-green CTA button with chevron
+    TopBanner.tsx          Full-width blush strip with centered logo
+    Navbar.tsx              Sticky nav with links + mobile menu
+    Hero.tsx                 Two-column hero with arch-masked photo
+    FeatureSection.tsx        Reusable circular-photo + text block (Nail Art / About Us / Services)
+    LocationSection.tsx        Map + address + parking note on deep pink background
+    Footer.tsx                  Sage-green footer with nav, contact, address, socials
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Customizing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Colors & fonts**: edit the `@theme` block in `app/globals.css`.
+- **Images**: every photo currently points to `picsum.photos` placeholders (configured in
+  `next.config.ts` under `images.remotePatterns`). Swap the `src` props in `app/page.tsx` and
+  `Hero.tsx` for real salon photography, and add your real domain to `remotePatterns`.
+- **Map**: `LocationSection.tsx` embeds a generic Google Maps search query. Replace the `src` on
+  the `<iframe>` with your salon's actual Google Maps embed URL and update the address text.
+- **Copy**: all section copy lives inline in `page.tsx` and the component files — update freely.
