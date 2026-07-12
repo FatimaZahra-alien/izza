@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PillButton from "./Pillbutton";
+import PillButton from "./PillButton";
 
 type FeatureSectionProps = {
   id: string;
