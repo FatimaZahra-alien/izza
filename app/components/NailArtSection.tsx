@@ -12,7 +12,7 @@ export default function NailArtSection() {
           <div className="relative h-72 w-56 md:h-80 md:w-64">
             <div className="absolute left-0 top-4 h-56 w-44 overflow-hidden rounded-2xl shadow-lg md:h-64 md:w-52">
               <Image
-                src="/images/Nailart-2.jpg "
+                src="/images/Nailart-2.jpg"
                 alt="Hand-painted floral nail art in soft pastel tones"
                 fill
                 sizes="220px"
@@ -21,7 +21,7 @@ export default function NailArtSection() {
             </div>
             <div className="absolute -right-2 bottom-0 h-44 w-36 overflow-hidden rounded-2xl border-4 border-cream shadow-lg md:h-52 md:w-44">
               <Image
-                src="/images/Nailart-1.jpg "
+                src="/images/Nailart-1.jpg"
                 alt="Close-up of a fine-line geometric nail art design"
                 fill
                 sizes="180px"
